@@ -72,8 +72,8 @@ html_theme_options = {
 }
 
 # pygments_style = "manni"
-pygments_style = "tango"
-pygments_dark_style = "stata-dark"
+# pygments_style = "tango"
+# pygments_dark_style = "stata-dark"
 
 html_copy_source = False
 html_show_sphinx = False
