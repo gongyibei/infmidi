@@ -33,9 +33,28 @@ Features
 --------
 
 - **Absolute time**: Esaily insert note and event at any time point.
+
+.. code:: python
+    
+    clip.add(Note('C4'), 8)
+
 - **Time slicing**: With time slicing, MIDI events of a specific time period can be selected for modification.
+
+.. code:: python
+    
+    clip[8:16] += 4
+
 - **Generator**: Functions to generate music clip quickly.
+
+.. code:: python
+
+    progression = sheet('C4:M7 A4:m9|F4:M7 G4:7')
+
 - **Effects**: Functions to process MIDI.
+
+.. code:: python
+
+    delay(clip, n=3, length=0.5, decay=0.9)
 
 
 Licence
