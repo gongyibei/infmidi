@@ -547,7 +547,7 @@ class TrackName(MetaEvent):
         self.name = name
 
     def __repr__(self) -> str:
-        return f'{self.__class__.__name__}(text="{repr(self.text)[1:-1]}", location={self.location:.2f})'
+        return f'{self.__class__.__name__}(name="{repr(self.name)[1:-1]}", location={self.location:.2f})'
 
     def message(self, ticks_per_beat=DEFAULT_TICKS_PER_BEAT) -> MetaMessage:
         return MetaMessage(self.message_type,
@@ -677,6 +677,9 @@ class SequencerSpecific(MetaEvent):
     def __init__(self, data, location: float = 0) -> None:
         super().__init__(location)
         self.data = data
+
+    def __repr__(self) -> str:
+        return f'{self.__class__.__name__}(data={self.data}, location={self.location:.2f})'
     
     def message(self, ticks_per_beat=DEFAULT_TICKS_PER_BEAT) -> MetaMessage:
         return MetaMessage("sequencer_specific",
