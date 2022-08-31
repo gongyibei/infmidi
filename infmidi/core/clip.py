@@ -24,6 +24,7 @@ class Clip:
                  **kwargs) -> None:
         self.notes = NoteSet()
         self.events = EventSet()
+        self._length = None
         if items:
             for item in items:
                 self.add(item)
@@ -59,6 +60,13 @@ class Clip:
     @property
     def length(self) -> int:
         return max(self.notes_length, self.events_length)
+
+    @length.setter
+    def length(self, other: float) -> None:
+        if other < 0:
+            raise ParameterError(f'the length of Clip must be greater than 0!')
+
+        self._length = other
 
     def __setitem__(self, key: Slice, item: Union[Event, Note,
                                                   'Clip']) -> None:
