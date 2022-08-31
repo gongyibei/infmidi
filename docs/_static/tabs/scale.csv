@@ -1,0 +1,18 @@
+Name, Intervals
+宫, 2 2 3 2 3
+商, 2 3 2 3 2
+角, 3 2 3 2 2
+徵, 2 3 2 2 3
+羽, 3 2 2 3 2
+Gong, 2 2 3 2 3
+Shang, 2 3 2 3 2
+Jue, 3 2 3 2 2
+Zhi, 2 3 2 2 3
+Yu, 3 2 2 3 2
+Ionian, 2 2 1 2 2 2 1
+Dorian, 2 1 2 2 2 1 2
+Phrygian, 1 2 2 2 1 2 2
+Lydian, 2 2 2 1 2 2 1
+Mixolydian, 2 2 1 2 2 1 2
+Aeolian, 2 1 2 2 1 2 2
+Locrian, 1 2 2 1 2 2 2
