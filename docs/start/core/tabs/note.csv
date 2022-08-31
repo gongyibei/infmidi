@@ -1,0 +1,8 @@
+Operator ,Inplace Ver. ,Method Ver.  ,Description
+``+``    ,``+=``       ,``up(inplace=True)``     ,change ``value``
+``-``    ,``-=``       ,``down(inplace=True)``   ,change ``value``
+``<<``   ,``<<=``      ,``lshift(inplace=True)`` ,change ``location`` 
+``>>``   ,``>>=``      ,``rshift(inplace=True)`` ,change ``location`` 
+``*``    ,``*=``       ,``scale(inplace=True)``  ,change ``location`` and ``length``
+``^``    ,``^=``       ,``zoom(inplace=True)``   ,change ``length``
+``@``    ,``@=``       ,``at(inplace=True)``     ,change ``channel``

@@ -1,0 +1,12 @@
+Operator ,Inplace Ver. ,Method Ver.              ,Description
+``+``    ,``+=``       ,``add(inplace=True)``    ,add ``Note``、``Event`` and ``Clip`` to track
+``+``    ,``+=``       ,``up(inplace=True)``     ,change ``value`` for all notes
+``-``    ,``+=``       ,``remove(inplace=True)`` ,remvoe ``Note``、 ``Event`` from track
+``-``    ,``-=``       ,``down(inplace=True)``   ,change ``value`` for all notes
+``<<``   ,``<<=``      ,``lshift(inplace=True)`` ,for all notes and events
+``>>``   ,``>>=``      ,``rshift(inplace=True)`` ,change ``location`` for all notes and events
+``*``    ,``*=``       ,``scale(inplace=True)``  ,change ``location`` and ``length`` for all notes and events
+``^``    ,``^=``       ,``zoom(inplace=True)``   ,change ``length`` for all notes
+``|``    ,``|=``       ,``concat(inplace=True)`` ,concat track with another one
+``**``   ,``**=``      ,``repeat(inplace=True)`` ,repeat track N times
+``@``    ,``@=``       ,``at(inplace=True)``     ,change ``channel`` for all notes and events

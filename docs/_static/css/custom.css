@@ -1,0 +1,13 @@
+article table.align-default {
+    text-align: center;
+}
+table {
+    /* box-sizing: content-box; */
+    width: 100%;
+    /* white-space:nowrap; */
+    table-layout: auto;
+}
+table.align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
