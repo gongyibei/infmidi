@@ -1,4 +1,4 @@
-InfMidi
+INFMIDI
 =======
 
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
@@ -36,7 +36,7 @@ Features
 
 .. code:: python
     
-    # Add C4 on beat 8
+    # Add C4 on beat 8.
     clip += Note('C4', location=8)
 
 
@@ -64,7 +64,7 @@ Features
 Related projects
 ----------------
 
-- `mido <https://github.com/mido/mido>`_ - a library for working with MIDI messages and ports. (INFMIDI is based on mido)
+- `mido <https://github.com/mido/mido>`_ - A library for working with MIDI messages and ports. (INFMIDI is based on mido)
 - `music21 <https://github.com/cuthbertLab/music21>`_ - A Toolkit for Computational Musicology.
 - `pretty-midi <https://github.com/craffel/pretty-midi>`_ - Utility functions for handling MIDI data in a nice/intuitive way.
 - `musicpy <https://github.com/Rainbow-Dreamer/musicpy>`_ - A music programming language in Python designed to write music in very handy syntax through music theory and algorithms.
