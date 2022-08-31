@@ -78,7 +78,7 @@ Create and  manipulate ``Clip``  object.
     # Concat the clip with a new
     clip |= new
 
-    # Raise the first 8 beats notes by 8 semitones.
+    # Raise the first 8 beats notes by 10 semitones.
     clip[:8] += 10
 
     # Delay the first 8 beats notes and events 16 beats.
@@ -90,8 +90,8 @@ Create and  manipulate ``Clip``  object.
     # Repeate the clip 4 times.
     clip **= 4
 
-    # More operations
-    ..
+    # More operations.
+    ...
 
 
 Write your own song.
@@ -103,18 +103,18 @@ Write your own song.
 
     track1 = song.new_track(name='Melody track', instrument='Acoustic Guitar(steel)')
 
-    # Create some clips and add to track
-    ..
+    # Create some clips and add to track.
+    ...
 
     track2 = song.new_track(name='Chord track', instrument='Acoustic Grand Piano')
 
-    # Create some clips and add to track
-    ..
+    # Create some clips and add to track.
+    ...
 
     track3 = song.new_track(name='Drum track', is_drum=True)
 
-    # Create some clips and add to track
-    ..
+    # Create some clips and add to track.
+    ...
 
 
 
@@ -125,7 +125,7 @@ Read and save midi file.
     from infmidi import Midi
     mid = Midi.read('/path/to/xxx.mid')
 
-    # do some changes
+    # do some changes.
     ...
 
     mid.save('/path/to/xxx.mid')
