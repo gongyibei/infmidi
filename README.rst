@@ -13,7 +13,7 @@ INFMIDI
     :alt: Documentation Status
 
 
-Manipulate midi and create music with a simple and high level interface.
+Manipulate midi and create music with a simple and high level interface in Python.
 
 Installation
 ------------
@@ -38,7 +38,7 @@ Basic objects
 
 - ``Event``: MIDI events.
 - ``Note``: A warpper of "note_off" and "note_on" ``Event``.
-- ``Clip``: A container of ``Note`` and ``Event``, with rich high-level operations.
+- ``Clip``: The core object in infmidi; A container of ``Note`` and ``Event``, with rich high-level operations.
 - ``Track``: Inherited from ``Clip``, with additional properties (such as name, instrument and mute, etc.).
 - ``Midi``: Help you to organize your song with multiple ``Track``.
 
