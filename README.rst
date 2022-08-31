@@ -1,6 +1,10 @@
 INFMIDI
 =======
 
+.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+    :target: https://opensource.org/licenses/MIT
+    :alt: License: MIT
+
 .. image:: https://readthedocs.org/projects/infmidi/badge/?version=latest
     :target: https://infmidi.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
