@@ -36,24 +36,29 @@ Features
 
 .. code:: python
     
-    clip.add(Note('C4'), 8)
+    # add C4 on beat 8
+    clip += Note('C4', location=8)
+
 
 - **Time slicing**: With time slicing, MIDI events of a specific time period can be selected for modification.
 
 .. code:: python
     
+    # Raise notes from beats 8 to 16 by 4 semitones.
     clip[8:16] += 4
 
 - **Generator**: Functions to generate music clip quickly.
 
 .. code:: python
 
-    progression = sheet('C4:M7 A4:m9|F4:M7 G4:7')
+    # Generate chord progression with sheet.
+    progression = sheet('C4:M7 A4:m9 | F4:M7 G4:7')
 
 - **Effects**: Functions to process MIDI.
 
 .. code:: python
 
+    # Add delay effect to clip.
     delay(clip, n=3, length=0.5, decay=0.9)
 
 
