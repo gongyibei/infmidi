@@ -5,7 +5,7 @@ Manipulate midi and create music with a simple and high level interface.
 Installation
 ------------
 
-If you only need basic features, such as reading, editing, processing and saving midi files. 
+If you only need basic features, such as reading, editing, processing and saving midi file. 
 
 ::
 
@@ -20,8 +20,8 @@ If you need extra features, such as playing, ploting and interacting.
 Overview
 --------
 
-Basic
-^^^^^
+Basic objects
+^^^^^^^^^^^^
 
 - ``Event``: MIDI events.
 - ``Note``: A warpper of "note_off" and "note_on" ``Event``.
@@ -32,10 +32,10 @@ Basic
 Extras
 ^^^^^^
 
-- ``generator``: Functions to generate Clip object quickly.
-- ``effects``: Functions to process Clip object.
-- ``devices``: Objects to play Midi object and to interact with DAWs.
-- ``utils``: Other usefull functions, such as plot Midi object.
+- ``generator``: Functions to generate `Clip` object quickly.
+- ``effects``: Functions to process `Clip` object.
+- ``devices``: Objects to play `Midi` object and to interact with DAWs.
+- ``utils``: Other usefull functions, such as plot `Midi` object.
 
 Examples
 --------
@@ -47,7 +47,7 @@ Create ``Note`` object.
 
 .. code-block:: python
     
-    Note('A4') # Note(name="A4", value=69, freq=440.00, location=0.00, length=1.00, velocity=127, channel=0)
+    Note('A4') # Note(name="A4", value=69, frequency=440.00, location=0.00, length=1.00, velocity=127, channel=0)
 
     # Different way to initialize.
     Note('A4') == Note(69) == Note(440.) # True
@@ -59,7 +59,7 @@ Create ``Note`` object.
     Note('A4') >> 8
 
 
-Create and  manipulate ``Clip``  object
+Create and  manipulate ``Clip``  object.
 
 .. code-block:: python
 
@@ -99,7 +99,7 @@ Write your own song.
 .. code-block:: python
 
     from infmidi import Midi
-    song = song = Midi(name='My song', bpm=123, time_signature='4/4')
+    song = Midi(name='My song', bpm=123, time_signature='4/4', key_signature='C')
 
     track1 = song.new_track(name='Melody track', instrument='Acoustic Guitar(steel)')
 
@@ -204,7 +204,7 @@ Effects
     for track in mid.tracks:
         if track.is_drum:
             continue
-        scale_map(track, key='C', scale='宫', inplace=True)
+        scale_map(track, key=mid.key_signature, scale='宫', inplace=True)
 
 More effect functions comming soon ...
 
