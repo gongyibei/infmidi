@@ -551,7 +551,7 @@ class TrackName(MetaEvent):
 
     def message(self, ticks_per_beat=DEFAULT_TICKS_PER_BEAT) -> MetaMessage:
         return MetaMessage(self.message_type,
-                           text=self.text,
+                           name=self.name,
                            time=core.convert.loc2tick(self.location,
                                                       ticks_per_beat))
 
