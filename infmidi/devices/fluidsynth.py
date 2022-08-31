@@ -1,5 +1,4 @@
 import os
-import platform
 import pkg_resources
 from tempfile import TemporaryDirectory
 from typing import Optional, Union
@@ -14,11 +13,15 @@ class FluidSynth:
     def __init__(self,
                  font_path: Optional[str] = None,
                  audio_driver: Optional[str] = None):
+        
+        if not font_path:
+            font_path = pkg_resources.resource_filename(
+                __name__, 'TimGM6mb.sf2')
 
         self.font_path = font_path
         self.audio_driver = audio_driver
 
-    def play(self, mid: Union[Note, Clip, Track, Midi]) -> None:
+    def play(self, mid: Midi) -> None:
         with TemporaryDirectory(prefix='.infmidi.FluidSynth.') as dirname:
             midi_path = os.path.join(dirname, 'tmp.mid')
             mid.save(midi_path)
