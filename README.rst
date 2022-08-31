@@ -19,20 +19,20 @@ Documentation
 -------------
 `English <https://infmidi.readthedocs.io/en/latest/>`_  | `中文文档 <https://infmidi.readthedocs.io/zh/latest/>`_ .
 
-- `🔌 Install <https://infmidi.readthedocs.io/zh/latest/start/install.html>`_ : Here are the detailed installation instructions. If you only need basic features use ``pip install infmidi`` to install.
-- `🚀 Quick start <https://infmidi.readthedocs.io/zh/latest/start/quickstart.html>`_ : Here are a few examples to get you started quickly with websockets.
-- `🎹 Fundation <https://infmidi.readthedocs.io/zh/latest/start/core/index>`_: Introduction to core objects (``Event``, ``Note``, ``Clip``, ``Track`` and ``Midi``).
-- `🎸 Generator <https://infmidi.readthedocs.io/zh/latest/start/generator/index>`_ : Functions to generate Clip object quickly.
-- `🎨 Effects <https://infmidi.readthedocs.io/zh/latest/start/effects/index>`_ : Functions to process Clip object.
-- `📻 Devices <https://infmidi.readthedocs.io/zh/latest/start/devices/index>`_ :  Objects to play MIDI and to interact with DAWs.
-- `🎼 Examples <https://infmidi.readthedocs.io/zh/latest/start/examples/index>`_ : Examples to learn INFMIDI.
-- `📑 Cheat sheet <https://infmidi.readthedocs.io/zh/latest/start/cheat>`_ : Cheat sheets of core obects, music theory and MIDI protocol.
+- `🔌 Install <https-//infmidi.readthedocs.io/zh/latest/start/install.html>`_ - Here are the detailed installation instructions (``pip install infmidi``).
+- `🚀 Quick start <https-//infmidi.readthedocs.io/zh/latest/start/quickstart.html>`_ - Here are a few examples to get you started quickly with websockets.
+- `🎹 Fundation <https-//infmidi.readthedocs.io/zh/latest/start/core/index>`_ - Introduction to core objects (``Event``, ``Note``, ``Clip``, ``Track`` and ``Midi``).
+- `🎸 Generator <https-//infmidi.readthedocs.io/zh/latest/start/generator/index>`_ - Functions to generate Clip object quickly.
+- `🎨 Effects <https-//infmidi.readthedocs.io/zh/latest/start/effects/index>`_ - Functions to process Clip object.
+- `📻 Devices <https-//infmidi.readthedocs.io/zh/latest/start/devices/index>`_ -  Objects to play MIDI and to interact with DAWs.
+- `🎼 Examples <https-//infmidi.readthedocs.io/zh/latest/start/examples/index>`_  - Examples to learn INFMIDI.
+- `📑 Cheat sheet <https-//infmidi.readthedocs.io/zh/latest/start/cheat>`_ - Cheat sheets of core obejcts, music theory and MIDI protocol.
 
 
 Features
 --------
 
-- **Absolute time**: Esaily insert note and event at any time point.
+- **Absolute time** - Esaily insert note and event at any time point.
 
 .. code:: python
     
@@ -40,29 +40,37 @@ Features
     clip += Note('C4', location=8)
 
 
-- **Time slicing**: Modify notes for a specific time period
+- **Time slicing** - Modify notes for a specific time period
 
 .. code:: python
     
     # Raise notes from beats 8 to 16 by 4 semitones.
     clip[8:16] += 4
 
-- **Generator**: Functions to generate music clip quickly.
+- **Generator** - Functions to generate music clip quickly.
 
 .. code:: python
 
     # Generate chord progression with sheet.
     progression = sheet('C4:M7 A4:m9 | F4:M7 G4:7')
 
-- **Effects**: Functions to process MIDI.
+- **Effects** - Functions to process MIDI.
 
 .. code:: python
 
     # Add delay effect to clip.
     delay(clip, n=3, length=0.5, decay=0.9)
 
+Related projects
+----------------
+
+- `mido <https://github.com/mido/mido>`_ - a library for working with MIDI messages and ports. (INFMIDI is based on mido)
+- `music21 <https://github.com/cuthbertLab/music21>`_ - A Toolkit for Computational Musicology.
+- `pretty-midi <https://github.com/craffel/pretty-midi>`_ - Utility functions for handling MIDI data in a nice/intuitive way.
+- `musicpy <https://github.com/Rainbow-Dreamer/musicpy>`_ - A music programming language in Python designed to write music in very handy syntax through music theory and algorithms.
+- `muspy <https://github.com/salu133445/muspy>`_ - A toolkit for symbolic music generation.
+
 
 Licence
 -------
-INFMIDI is released under the terms of the `MIT license
-<http://en.wikipedia.org/wiki/MIT_License>`_.
+MIT License © 2022 `gongyibei <https://github.com/gongyibei/>`_.
