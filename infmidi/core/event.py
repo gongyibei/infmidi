@@ -307,7 +307,7 @@ class ControlChange(ChannelEvent):
 
     def __init__(self,
                  control: int,
-                 value: int,
+                 value: int = 0,
                  location: float = 0,
                  channel: int = 0) -> None:
         super().__init__(location, channel)
