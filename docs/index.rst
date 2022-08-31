@@ -12,6 +12,7 @@
    start/effects/index
    start/devices/index
    start/examples/index
+   start/cheat
 
 
 .. toctree::
