@@ -234,15 +234,18 @@ class Midi:
                                               and msg.velocity == 0):
                     if note_msgs[msg.channel][msg.note]:
                         note_on = note_msgs[msg.channel][msg.note]
-                        location = core.convert.tick2loc(note_on.time,
-                                                    mid.ticks_per_beat)
+                        location = core.convert.tick2loc(
+                            note_on.time, mid.ticks_per_beat)
                         length = core.convert.tick2loc(msg.time - note_on.time,
-                                                  mid.ticks_per_beat)
+                                                       mid.ticks_per_beat)
                         track.add(
-                            Note(note_on.note,
-                                 velocity=note_on.velocity,
-                                 length=length,
-                                 location=location))
+                            Note(
+                                note_on.note,
+                                velocity=note_on.velocity,
+                                length=length,
+                                location=location,
+                                channel=note_on.channel,
+                            ))
                         note_msgs[msg.channel][msg.note] = None
                 else:
                     note_msgs[msg.channel][msg.note] = msg
