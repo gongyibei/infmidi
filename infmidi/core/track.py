@@ -17,7 +17,7 @@ class Track(Clip):
                  name: str = '',
                  instrument: Optional[Union[int, str]] = 0,
                  is_drum: bool = False,
-                 channel: Optional[int] = None,
+                 channel: Optional[int] = 0,
                  mute: bool = False,
                  **kwargs) -> None:
         super().__init__(items=items, **kwargs)
