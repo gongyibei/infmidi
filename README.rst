@@ -15,7 +15,7 @@ INFMIDI
 
 Manipulate midi and create music with a simple and high level interface in Python.
 
-Documentations: `English <https://infmidi.readthedocs.io/en/>`_  | `中文文档 <https://infmidi.readthedocs.io/zh/>`_ .
+Documentations: `English <https://infmidi.readthedocs.io/en/latest/>`_  | `中文文档 <https://infmidi.readthedocs.io/zh/latest/>`_ .
 
 
 Installation
