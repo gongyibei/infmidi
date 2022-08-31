@@ -40,7 +40,7 @@ Features
     clip += Note('C4', location=8)
 
 
-- **Time slicing**: With time slicing, MIDI events of a specific time period can be selected for modification.
+- **Time slicing**: Modify notes for a specific time period
 
 .. code:: python
     
