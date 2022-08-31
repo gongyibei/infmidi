@@ -189,7 +189,7 @@ Generate drum ``clip`` with ``sheet()``
 
 .. image:: https://github.com/gongyibei/infmidi/blob/master/assets/readme/sheet2.png
 
-More generator functions will comming ..
+More generator functions comming soon ...
 
 Effects
 ^^^^^^^
