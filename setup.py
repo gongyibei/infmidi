@@ -29,6 +29,7 @@ setup(
         "Issue tracker": "https://github.com/gongyibei/infmidi/issues",
     },
     packages=find_packages(),
+    package_data={'': ['TimGM6mb.sf2']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
