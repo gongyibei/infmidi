@@ -238,8 +238,8 @@ class _FixedNoteSet(SortedSet):
 class NoteSet(SortedSet):
 
     def __init__(self, iterable: Optional[Iterable[Note]] = None, key=None):
-        super().__init__(iterable=iterable, key=key)
         self.mat = defaultdict(lambda: defaultdict(_FixedNoteSet))
+        super().__init__(iterable=iterable, key=key)
 
     def __iter__(self):
         for note in self._list:
@@ -269,6 +269,8 @@ class NoteSet(SortedSet):
         super().update(notes)
         for note in notes:
             self.mat[note.channel][note.value].add(note)
+    __ior__ = update
+    _update = update
 
     def add(self, note: Note) -> None:
         if isinstance(note, Note):
