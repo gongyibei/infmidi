@@ -83,7 +83,7 @@ Use ``@`` to select the channel.
 
 .. hint:: 
 
-    All operators above have an inpalce version and an method version, click :doc:`here <./cheat>` to see the cheat sheet.
+    All operators above have an inpalce version and an method version, click :doc:`here <../cheat>` to see the cheat sheet.
 
 
 Get message

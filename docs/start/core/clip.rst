@@ -159,7 +159,7 @@ It's very usefull for you to send messages to different Track in DAW.
 
 .. hint:: 
 
-    All operators above have an inpalce version and an method version, click :doc:`here <./cheat>` to see the cheat sheet.
+    All operators above have an inpalce version and an method version, click :doc:`here <../cheat>` to see the cheat sheet.
     
 
 Get messages

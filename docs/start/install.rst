@@ -1,9 +1,14 @@
 Installation
 ============
 
+If you only need basic features, such as reading, editing, processing and saving midi file. 
 
-install
+::
 
-.. code-block:: console
+    pip install infmidi
 
-    $ pip install infmidi
+If you need extra features, such as playing, ploting and interacting. 
+
+::
+
+    pip install "infmidi[all]"
