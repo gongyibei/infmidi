@@ -158,15 +158,15 @@ def track2midi(track: Track, **kwargs) -> Midi:
     return Midi([track], **kwargs)
 
 
-def item2midi(item: Union[Note, Clip, Track], **kwargs) -> Midi:
-    if isinstance(item, Note):
-        mid = note2midi(item, **kwargs)
+def item2midi(item: Union[Note, Clip, Track, Midi], **kwargs) -> Midi:
+    if isinstance(item, Midi):
+        mid = item
+    if isinstance(item, Track):
+        mid = track2midi(item, **kwargs)
     elif isinstance(item, Clip):
         mid = clip2midi(item, **kwargs)
-    elif isinstance(item, Track):
-        mid = track2midi(item, **kwargs)
-    elif isinstance(item, Midi):
-        mid = item
+    elif isinstance(item, Note):
+        mid = note2midi(item, **kwargs)
     else:
         raise ParameterError(f"Invalid item type:{type(item)}.")
     return mid
