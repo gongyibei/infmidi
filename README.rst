@@ -55,7 +55,7 @@ Create ``Note`` object.
     # Raise the note by 8 semitones.
     Note('A4') + 8
 
-    # Delay the note and events 8 beats.
+    # Delay the note 8 beats.
     Note('A4') >> 8
 
 
@@ -101,17 +101,17 @@ Write your own song.
     from infmidi import Midi
     song = song = Midi(name='My song', bpm=123, time_signature='4/4')
 
-    track1 = song.new_track(name='Melody track', instrument=5)
+    track1 = song.new_track(name='Melody track', instrument='Acoustic Guitar(steel)')
 
     # Create some clips and add to track
     ..
 
-    track1 = song.new_track(name='Chord track', instrument=5)
+    track2 = song.new_track(name='Chord track', instrument='Acoustic Grand Piano')
 
     # Create some clips and add to track
     ..
 
-    track1 = song.new_track(name='Drum track', is_drum=True)
+    track3 = song.new_track(name='Drum track', is_drum=True)
 
     # Create some clips and add to track
     ..
