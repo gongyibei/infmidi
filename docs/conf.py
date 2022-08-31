@@ -45,24 +45,6 @@ autodoc_typehints = "description"
 # autodoc_typehints_description_target = "documented"
 
 
-html_theme_options = {
-    "sidebar_hide_name": True,
-}
-
-
-# html_logo = "_static/inf.webp"
-html_title = "INFMIDI"
-
-# html_favicon = "_static/favicon.ico"
-
-html_theme_options = {
-    "source_repository": "https://github.com/gongyibei/infmidi/",
-    "source_branch": "main",
-    "source_directory": "docs/",
-}
-
-
-
 templates_path = ['_templates']
 exclude_patterns = []
 
@@ -71,9 +53,28 @@ language = 'en'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+# html_logo = "_static/inf.webp"
+html_title = "INFMIDI"
+
+
 # html_theme = 'alabaster'
 html_theme = 'furo'
 html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
 ]
+
+html_theme_options = {
+    "source_repository": "https://github.com/gongyibei/infmidi/",
+    "source_branch": "main",
+    "source_directory": "docs/",
+    "sidebar_hide_name": False,
+}
+
+# pygments_style = "manni"
+pygments_style = "tango"
+pygments_dark_style = "stata-dark"
+
+html_copy_source = False
+html_show_sphinx = False
+
