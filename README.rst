@@ -1,5 +1,11 @@
 INFMIDI
 =======
+
+.. image:: https://readthedocs.org/projects/infmidi/badge/?version=latest
+    :target: https://infmidi.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+
 Manipulate midi and create music with a simple and high level interface.
 
 Installation
@@ -21,7 +27,7 @@ Overview
 --------
 
 Basic objects
-^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 - ``Event``: MIDI events.
 - ``Note``: A warpper of "note_off" and "note_on" ``Event``.
@@ -169,7 +175,7 @@ Generate progression ``clip`` with ``sheet()``
     progression = sheet(txt)
     plot(progression)
 
-.. image:: https://github.com/gongyibei/infmidi/blob/master/assets/readme/sheet1.png
+.. image:: https://raw.githubusercontent.com/gongyibei/infmidi/master/assets/readme/sheet1.png
 
 Generate drum ``clip`` with ``sheet()``
 
@@ -187,7 +193,7 @@ Generate drum ``clip`` with ``sheet()``
 
 
 
-.. image:: https://github.com/gongyibei/infmidi/blob/master/assets/readme/sheet2.png
+.. image:: https://raw.githubusercontent.com/gongyibei/infmidi/master/assets/readme/sheet2.png
 
 More generator functions comming soon ...
 
