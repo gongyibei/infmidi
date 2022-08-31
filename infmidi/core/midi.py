@@ -329,7 +329,7 @@ class Midi:
             mid = cls(type=1, ticks_per_beat=midi_file.ticks_per_beat)
             for i, mido_track in enumerate(midi_file.tracks):
                 # Initialize current track
-                track = Track(instrument=None)
+                track = Track(instrument=None, channel=None)
 
                 # Record note messages to pair.
                 note_msgs = [[None] * 128 for _ in range(16)]
