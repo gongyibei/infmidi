@@ -20,7 +20,7 @@ Documentation
 `English <https://infmidi.readthedocs.io/en/latest/>`_  | `中文文档 <https://infmidi.readthedocs.io/zh/latest/>`_ .
 
 - `🔌 Install <https://infmidi.readthedocs.io/en/latest/start/install.html>`_ - Here are the detailed installation instructions (``pip install infmidi``).
-- `🚀 Quick start <https://infmidi.readthedocs.io/en/latest/start/quickstart.html>`_ - Here are a few examples to get you started quickly with websockets.
+- `🚀 Quick start <https://infmidi.readthedocs.io/en/latest/start/quickstart.html>`_ - Here are a few examples to get you started quickly.
 - `🎹 Fundation <https://infmidi.readthedocs.io/en/latest/start/core/index.html>`_ - Introduction to core objects (``Event``, ``Note``, ``Clip``, ``Track`` and ``Midi``).
 - `🎸 Generator <https://infmidi.readthedocs.io/en/latest/start/generator/index.html>`_ - Functions to generate ``Clip`` object quickly.
 - `🎨 Effects <https://infmidi.readthedocs.io/en/latest/start/effects/index.html>`_ - Functions to process ``Clip`` object.
