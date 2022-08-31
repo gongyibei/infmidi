@@ -63,7 +63,7 @@ Create and  manipulate ``Clip``  object
 
 .. code-block:: python
 
-    from infmidi import Note, clip, clip
+    from infmidi import Note, Clip
 
     clip = Clip()
 
@@ -138,7 +138,7 @@ Generate chord ``clip`` with ``chord()``.
 
 .. code-block:: python 
 
-    from infmidi.generate import sheet
+    from infmidi.generator import sheet
     
     # Using full name to create chord clip.
     Cm7 = chord('C4:m7')
