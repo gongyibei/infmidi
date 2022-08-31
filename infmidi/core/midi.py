@@ -78,6 +78,13 @@ class Midi:
             self.trans(item)
         elif isinstance(item, Event):
             self.metaevents.add(item)
+        else:
+            raise ParameterError(f"Unsupported item type: {type(item)}")
+
+    __add__ = partialmethod(add, inplace=False)
+    __iadd__ = partialmethod(add, inplace=True)
+
+
 
     @optional_inplace(True)
     def mute(self, arr: Sequence[int]):
@@ -89,7 +96,7 @@ class Midi:
         return self
 
     @optional_inplace(True)
-    def activate(self, arr: Sequence[int]):
+    def unmute(self, arr: Sequence[int]):
         for track in self:
             track.mute = True
 
@@ -385,7 +392,7 @@ class Midi:
         elif midi_file.type == 1:
             return from_type1(midi_file)
         elif midi_file.type == 2:
-            raise MIDITypeError(f"Unsupported format 2 midi file")
+            raise MIDITypeError(f"Unsupported format 2 midi file.")
 
     @classmethod
     def read(cls, filename: str) -> 'Midi':
