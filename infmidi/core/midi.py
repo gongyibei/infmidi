@@ -8,7 +8,7 @@ from .. import core
 from ..constants import DEFAULT_TICKS_PER_BEAT
 from ..exceptions import MIDITypeError, ParameterError
 from ..warps import optional_inplace
-from .event import EventSet, KeySignature, SetBpm, TimeSignature
+from .event import Event, EventSet, KeySignature, SetBpm, TimeSignature
 from .note import Note
 from .track import Track
 
@@ -66,6 +66,20 @@ class Midi:
         return max(track.length for track in self)
 
     @optional_inplace(True)
+    def trans(self, semi: int) -> 'Midi':
+        for track in self:
+            if not track.is_drum:
+                track += semi
+        return self
+
+    @optional_inplace(True)
+    def add(self, item: Union[int, Event]):
+        if isinstance(item, int):
+            self.trans(item)
+        elif isinstance(item, Event):
+            self.metaevents.add(item)
+
+    @optional_inplace(True)
     def mute(self, arr: Sequence[int]):
         for track in self:
             track.mute = False
@@ -75,7 +89,7 @@ class Midi:
         return self
 
     @optional_inplace(True)
-    def unmute(self, arr: Sequence[int]):
+    def activate(self, arr: Sequence[int]):
         for track in self:
             track.mute = True
 
@@ -384,7 +398,7 @@ class Midi:
 
     def new_track(self,
                   name: str = "",
-                  channel: int = None,
+                  channel: Optional[int] = None,
                   **kwargs) -> Track:
         # TODO. may need to be smarter..
         if not channel:
