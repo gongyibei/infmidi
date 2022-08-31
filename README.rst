@@ -21,12 +21,12 @@ Documentation
 
 - `🔌 Install <https://infmidi.readthedocs.io/en/latest/start/install.html>`_ - Here are the detailed installation instructions (``pip install infmidi``).
 - `🚀 Quick start <https://infmidi.readthedocs.io/en/latest/start/quickstart.html>`_ - Here are a few examples to get you started quickly with websockets.
-- `🎹 Fundation <https://infmidi.readthedocs.io/en/latest/start/core/index>`_ - Introduction to core objects (``Event``, ``Note``, ``Clip``, ``Track`` and ``Midi``).
-- `🎸 Generator <https://infmidi.readthedocs.io/en/latest/start/generator/index>`_ - Functions to generate ``Clip`` object quickly.
-- `🎨 Effects <https://infmidi.readthedocs.io/en/latest/start/effects/index>`_ - Functions to process ``Clip`` object.
-- `📻 Devices <https://infmidi.readthedocs.io/en/latest/start/devices/index>`_ -  Objects to play MIDI and to interact with DAWs.
-- `🎼 Examples <https://infmidi.readthedocs.io/en/latest/start/examples/index>`_  - Examples to learn INFMIDI.
-- `📑 Cheat sheet <https://infmidi.readthedocs.io/en/latest/start/cheat>`_ - Cheat sheets of core obejcts, music theory and MIDI protocol.
+- `🎹 Fundation <https://infmidi.readthedocs.io/en/latest/start/core/index.html>`_ - Introduction to core objects (``Event``, ``Note``, ``Clip``, ``Track`` and ``Midi``).
+- `🎸 Generator <https://infmidi.readthedocs.io/en/latest/start/generator/index.html>`_ - Functions to generate ``Clip`` object quickly.
+- `🎨 Effects <https://infmidi.readthedocs.io/en/latest/start/effects/index.html>`_ - Functions to process ``Clip`` object.
+- `📻 Devices <https://infmidi.readthedocs.io/en/latest/start/devices/index.html>`_ -  Objects to play MIDI and to interact with DAWs.
+- `🎼 Examples <https://infmidi.readthedocs.io/en/latest/start/examples/index.html>`_  - Examples to learn INFMIDI.
+- `📑 Cheat sheet <https://infmidi.readthedocs.io/en/latest/start/cheat.html>`_ - Cheat sheets of core obejcts, music theory and MIDI protocol.
 
 
 Features
