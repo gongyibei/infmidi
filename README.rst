@@ -5,6 +5,9 @@ INFMIDI
     :target: https://opensource.org/licenses/MIT
     :alt: License: MIT
 
+.. image:: https://badge.fury.io/py/infmidi.svg
+    :target: https://badge.fury.io/py/infmidi
+
 .. image:: https://readthedocs.org/projects/infmidi/badge/?version=latest
     :target: https://infmidi.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
