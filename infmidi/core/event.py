@@ -17,8 +17,8 @@ CHANNEL_EVENT = [
     "ProgramChange", "ChannelPressure", "PitchBend"
 ]
 META_EVENT = [
-    "MetaEvent", "Text", "TrackName", "Lyric", "Marker", "CuePoint", "SetBpm",
-    "TimeSignature", "KeySignature"
+    "MetaEvent", "Text", "Copyright", "Lyric", "Marker", "CuePoint", "TrackName", "SetBpm",
+    "TimeSignature", "KeySignature", "SequencerSpecific"
 ]
 EXTRA = ["EventSet"]
 
