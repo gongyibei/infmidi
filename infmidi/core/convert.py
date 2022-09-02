@@ -161,7 +161,7 @@ def track2midi(track: Track, **kwargs) -> Midi:
 def item2midi(item: Union[Note, Clip, Track, Midi], **kwargs) -> Midi:
     if isinstance(item, Midi):
         mid = item
-    if isinstance(item, Track):
+    elif isinstance(item, Track):
         mid = track2midi(item, **kwargs)
     elif isinstance(item, Clip):
         mid = clip2midi(item, **kwargs)

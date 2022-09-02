@@ -42,15 +42,15 @@ class Clip:
         return len(self.events)
 
     @property
-    def notes_length(self) -> int:
+    def notes_length(self) -> float:
         if self.notes:
             last_note = self.notes[-1]
-            return math.ceil(last_note.location + last_note.length)
+            return math.ceil(last_note.location)
         else:
             return 0
 
     @property
-    def events_length(self) -> int:
+    def events_length(self) -> float:
         if self.events:
             last_event = self.events[-1]
             return math.ceil(last_event.location)
@@ -58,7 +58,9 @@ class Clip:
             return 0
 
     @property
-    def length(self) -> int:
+    def length(self) -> float:
+        if self._length:
+            return self._length
         return max(self.notes_length, self.events_length)
 
     @length.setter
@@ -103,6 +105,7 @@ class Clip:
         clip = self.__class__()
         clip.notes = self.copy_notes()
         clip.events = self.copy_events()
+        clip.length = self.length
         return clip
 
     @optional_inplace(True)
@@ -131,6 +134,7 @@ class Clip:
         self.events = EventSet(events)
         if reverse:
             self.reverse()
+        self.length = rloc - lloc
         return self
 
     def _add_event(self,
@@ -235,6 +239,7 @@ class Clip:
     @optional_inplace(True)
     def concat(self, clip: 'Clip') -> 'Clip':
         self._add_clip(clip.copy(), self.length)
+        self.length += clip.length
         return self
 
     __or__ = partialmethod(concat, inplace=False)

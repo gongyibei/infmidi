@@ -76,13 +76,13 @@ class Track(Clip):
             msgs.append(MetaMessage('track_name', name=self.name, time=0))
 
         if not self.mute:
-            if self.channel and self._instrument_id:
+            if (not self.channel is None) and self._instrument_id:
                 msgs.append(
                     ProgramChange(
                         self._instrument_id,
                         channel=self.channel).message(ticks_per_beat))
             msgs.extend(super().messages(ticks_per_beat))
-            if self.channel:
+            if not self.channel is None:
                 for msg in msgs:
                     if 'channel' in msg.__dict__:
                         msg.channel = self.channel

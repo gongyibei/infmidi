@@ -63,7 +63,7 @@ class Note:
 
     @property
     def octave(self) -> float:
-        return
+        return self._note_on.octave
 
     @property
     def velocity(self) -> int:

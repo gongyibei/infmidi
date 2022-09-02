@@ -13,14 +13,14 @@ __all__ = [
 def _chord_and_note_sheet(item: str, length: float):
 
     def _note(note, length):
-        if note.isdigit():
-            note = int(note)
         return Note(note, length=length)
 
     def _chord(chord_name, length):
         root, chord_type = chord_name.split(':')
         return chord(root, chord_type, length=length)
 
+    if item.isdigit():
+        return _note(int(item), length)
     if re.match('[ABCDEFG][b#]*[0-9]$', item):
         return _note(item, length)
     if re.match('[ABCDEFG][b#]*[0-9]:\S*$', item):
@@ -83,7 +83,7 @@ def sheet(text: str,
           bar_symbol: str = '|',
           rest_symbol: str = '0',
           delay_symbol: str = '-') -> Clip:
-    res = _parse_sheet(text, bar_symbol, delay_symbol)
+    res, n_bars = _parse_sheet(text, bar_symbol, delay_symbol)
     clip = Clip()
     loc = 0
     new_res = []
@@ -114,16 +114,18 @@ def sheet(text: str,
             clip.add(val, loc)
         elif isinstance(val, Clip):
             clip.add(val, loc)
+    clip.length = n_bars * length_per_bar
     return clip
 
 
 def _parse_sheet(sheet, bar_symbol, delay_symbol):
     bars = sheet.split(bar_symbol)
+    n_bars = len(bars)
     res = []
     for bar in bars:
         bar = bar.strip()
         res.extend(_parse_bar(bar.strip(), delay_symbol))
-    return res
+    return res, n_bars
 
 
 def _parse_bar(bar: str, delay_symbol):

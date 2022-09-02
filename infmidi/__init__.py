@@ -15,5 +15,5 @@ __all__.extend(constants.__all__)
 
 
 __title__ = 'infmidi'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'gongyibei'
