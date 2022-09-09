@@ -16,7 +16,7 @@ INFMIDI
 INFMIDI is a MIDI editing library written in Python，with a lot of advanced syntax to help you quickly edit and generate MIDI files. You can also use it to assist in arranging and composing music with code.
 
 
-.. image:: ../assets/example.gif
+.. image:: https://raw.githubusercontent.com/gongyibei/infmidi/master/assets/example.gif
 
 
 Documentation
