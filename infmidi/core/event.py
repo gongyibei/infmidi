@@ -141,10 +141,6 @@ class _NoteEvent(ChannelEvent):
     __sub__ = partialmethod(down, inplace=False)
     __isub__ = partialmethod(down, inplace=True)
 
-    def _compare(self, a, b, op):
-        _a = (a.location, a.value, a.velocity, a.channel)
-        _b = (b.location, b.value, b.velocity, b.channel)
-        return op(_a, _b)
 
     @property
     def name(self) -> str:
@@ -211,6 +207,11 @@ class NoteOff(_NoteEvent):
                    location=core.convert.tick2loc(msg.time, ticks_per_beat),
                    channel=msg.channel)
 
+    def _compare(self, a, b, op):
+        _a = (a.location, a.value, a.velocity, a.channel)
+        _b = (b.location, b.value, b.velocity, b.channel)
+        return op(_a, _b)
+
     def copy(self) -> 'NoteOff':
         return self.__class__(self.value,
                               velocity=self.velocity,
@@ -254,6 +255,11 @@ class NoteOn(_NoteEvent):
                    location=core.convert.tick2loc(msg.time, ticks_per_beat),
                    channel=msg.channel)
 
+    def _compare(self, a, b, op):
+        _a = (a.location, a.value, a.velocity, a.channel)
+        _b = (b.location, b.value, b.velocity, b.channel)
+        return op(_a, _b)
+
     def copy(self) -> 'NoteOn':
         return self.__class__(self.value,
                               velocity=self.velocity,
@@ -291,9 +297,14 @@ class NotePressure(_NoteEvent):
             msg: Message,
             ticks_per_beat: int = DEFAULT_TICKS_PER_BEAT) -> 'NotePressure':
         return cls(msg.note,
-                   velocity=msg.velocity,
+                   pressure=msg.pressure,
                    location=core.convert.tick2loc(msg.time, ticks_per_beat),
                    channel=msg.channel)
+
+    def _compare(self, a, b, op):
+        _a = (a.location, a.value, a.pressure, a.channel)
+        _b = (b.location, b.value, b.pressure, b.channel)
+        return op(_a, _b)
 
     def copy(self) -> 'NotePressure':
         return self.__class__(self.value,

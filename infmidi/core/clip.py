@@ -24,7 +24,6 @@ class Clip:
                  **kwargs) -> None:
         self.notes = NoteSet()
         self.events = EventSet()
-        self._length = None
         if items:
             for item in items:
                 self.add(item)
@@ -45,7 +44,7 @@ class Clip:
     def notes_length(self) -> float:
         if self.notes:
             last_note = self.notes[-1]
-            return math.ceil(last_note.location)
+            return math.ceil(last_note.location + last_note.length)
         else:
             return 0
 
@@ -59,16 +58,8 @@ class Clip:
 
     @property
     def length(self) -> float:
-        if self._length:
-            return self._length
         return max(self.notes_length, self.events_length)
 
-    @length.setter
-    def length(self, other: float) -> None:
-        if other < 0:
-            raise ParameterError(f'the length of Clip must be greater than 0!')
-
-        self._length = other
 
     def __setitem__(self, key: Slice, item: Union[Event, Note,
                                                   'Clip']) -> None:
@@ -105,7 +96,6 @@ class Clip:
         clip = self.__class__()
         clip.notes = self.copy_notes()
         clip.events = self.copy_events()
-        clip.length = self.length
         return clip
 
     @optional_inplace(True)
@@ -134,7 +124,6 @@ class Clip:
         self.events = EventSet(events)
         if reverse:
             self.reverse()
-        self.length = rloc - lloc
         return self
 
     def _add_event(self,
@@ -239,7 +228,6 @@ class Clip:
     @optional_inplace(True)
     def concat(self, clip: 'Clip') -> 'Clip':
         self._add_clip(clip.copy(), self.length)
-        self.length += clip.length
         return self
 
     __or__ = partialmethod(concat, inplace=False)
@@ -255,7 +243,7 @@ class Clip:
     def repeat(self, n: int) -> 'Clip':
         clip = self.copy()
         for _ in range(n - 1):
-            self |= clip.copy()
+            self |= clip
         return self
 
     __pow__ = partialmethod(repeat, inplace=False)
@@ -296,7 +284,10 @@ class Clip:
     def reverse(self) -> 'Clip':
         length = self.length
         for item in self:
-            item.location = length - item.location
+            if isinstance(item, Note):
+                item.location = length - (item.location + item.length)
+            else:
+                item.location = length - item.location
         return self
 
     __reversed__ = partialmethod(reverse, inplace=False)
