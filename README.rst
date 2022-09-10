@@ -5,8 +5,8 @@ INFMIDI
     :target: https://opensource.org/licenses/MIT
     :alt: License: MIT
 
-.. image:: https://img.shields.io/badge/pypi-0.1.0-blue
-    :target: https://pypi.org/project/infmidi/0.1.0
+.. image:: https://img.shields.io/badge/pypi-0.1.1-blue
+    :target: https://pypi.org/project/infmidi/0.1.1
 
 .. image:: https://readthedocs.org/projects/infmidi/badge/?version=latest
     :target: https://infmidi.readthedocs.io/en/latest/?badge=latest
