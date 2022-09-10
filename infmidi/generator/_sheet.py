@@ -114,7 +114,6 @@ def sheet(text: str,
             clip.add(val, loc)
         elif isinstance(val, Clip):
             clip.add(val, loc)
-    clip.length = n_bars * length_per_bar
     return clip
 
 
