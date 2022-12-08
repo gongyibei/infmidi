@@ -10,6 +10,8 @@ import threading
 import pkg_resources
 from typing import Optional
 
+__all__ = ['Viewer']
+
 
 def ServeDirectoryWithHTTP(port, directory="./INFMIDIViewer/"):
     if port:
